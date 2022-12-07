@@ -1,4 +1,4 @@
-# SVG Viewer and Editor Qt
+# SVG Viewer and Editor
 
 Simple experience with Qt and SVG images.
 
@@ -7,7 +7,6 @@ Simple experience with Qt and SVG images.
 - Linux
 - Ubuntu 22.04 LTS
 - OpenBox
-
 - Qt 6.4.1
 - cmake 3.22.1
 - cpp-12
