@@ -8,6 +8,7 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/6.5.0/msvc2019_64)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
@@ -68,3 +69,8 @@ install(TARGETS SVG_Image_Viewer
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(SVG_Image_Viewer)
 endif()
+
+#add_custom_command(TARGET SVG_Image_Viewer POST_BUILD        # Adds a post-build event to MyTest
+#    COMMAND ${CMAKE_COMMAND} -E copy_if_different  # which executes "cmake - E copy_if_different..."
+#        "C:/Qt/6.5.0/msvc2019_64/bin/"      # <--this is in-file
+#        $<TARGET_FILE_DIR:MyTest>)                 # <--this is out-file path
